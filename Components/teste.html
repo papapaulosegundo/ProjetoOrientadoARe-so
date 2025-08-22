@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software House Prototype</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        .page {
+            display: none;
+        }
+        .page.active {
+            display: block;
+        }
+        .animate-fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800 min-h-screen flex flex-col">
+
+    <!-- Navegação Principal -->
+    <header class="bg-white shadow-md">
+        <nav class="container mx-auto p-4 flex justify-between items-center">
+            <a href="#" id="nav-home" class="text-2xl font-bold text-indigo-600">
+                Software House
+            </a>
+            <div class="flex space-x-4">
+                <a href="#" id="nav-products" class="text-gray-600 hover:text-indigo-600 font-medium">Produtos</a>
+                <a href="#" id="nav-portfolio" class="text-gray-600 hover:text-indigo-600 font-medium">Portfólio</a>
+                <a href="#" id="nav-login" class="px-4 py-2 bg-indigo-600 text-white rounded-md font-medium hover:bg-indigo-700 transition duration-300">Login</a>
+                <button id="nav-logout" class="px-4 py-2 bg-red-500 text-white rounded-md font-medium hover:bg-red-600 transition duration-300 hidden">Logout</button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto p-8 flex-grow">
+        <!-- Página Inicial -->
+        <div id="homepage" class="page active">
+            <div class="text-center py-20 bg-gradient-to-r from-indigo-500 to-purple-600 text-white rounded-xl shadow-lg">
+                <h1 class="text-5xl font-extrabold mb-4 animate-fade-in">Soluções de Software que Transformam</h1>
+                <p class="text-xl mb-8 opacity-90">Construímos softwares inovadores para impulsionar o seu negócio.</p>
+                <a href="#" id="cta-products" class="px-8 py-3 bg-white text-indigo-600 rounded-full font-bold text-lg shadow-md hover:bg-gray-100 transition duration-300 transform hover:scale-105">
+                    Conheça Nossos Produtos
+                </a>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8 mt-12">
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-2xl font-bold text-indigo-600 mb-2">Desenvolvimento Ágil</h3>
+                    <p class="text-gray-600">Equipes dedicadas e metodologias ágeis para entregar valor rapidamente.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-2xl font-bold text-indigo-600 mb-2">Inovação Constante</h3>
+                    <p class="text-gray-600">Estamos sempre explorando novas tecnologias para oferecer as melhores soluções.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-2xl font-bold text-indigo-600 mb-2">Suporte 24/7</h3>
+                    <p class="text-gray-600">Conte com nossa equipe de suporte para ajudar você a qualquer momento.</p>
+                </div>
+            </div>
+            <!-- Seção de Portfólio -->
+            <div id="portfolio-section" class="mt-16 pt-8 border-t border-gray-300">
+                <h2 class="text-4xl font-bold text-center mb-8 text-indigo-600">Nosso Portfólio</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Projeto 1 -->
+                    <div class="bg-white p-4 rounded-lg shadow-md">
+                        <img src="https://placehold.co/600x400/C7D2FE/3730A3?text=E-commerce+Moderno" alt="Imagem do projeto de e-commerce" class="rounded-lg mb-4 w-full h-auto">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-1">E-commerce Moderno</h3>
+                        <p class="text-gray-600 text-sm">Plataforma de vendas online com UX otimizada e checkout simplificado.</p>
+                    </div>
+                    <!-- Projeto 2 -->
+                    <div class="bg-white p-4 rounded-lg shadow-md">
+                        <img src="https://placehold.co/600x400/C7D2FE/3730A3?text=Sistema+de+Gestão" alt="Imagem do projeto de sistema de gestão" class="rounded-lg mb-4 w-full h-auto">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-1">Sistema de Gestão Empresarial</h3>
+                        <p class="text-gray-600 text-sm">Solução de gestão interna para controle de estoque, finanças e RH.</p>
+                    </div>
+                    <!-- Projeto 3 -->
+                    <div class="bg-white p-4 rounded-lg shadow-md">
+                        <img src="https://placehold.co/600x400/C7D2FE/3730A3?text=App+Móvel" alt="Imagem do projeto de aplicativo móvel" class="rounded-lg mb-4 w-full h-auto">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-1">Aplicativo Móvel de Serviços</h3>
+                        <p class="text-gray-600 text-sm">App nativo para Android e iOS, conectando prestadores de serviços a clientes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tela de Produtos -->
+        <div id="products-page" class="page">
+            <h2 class="text-4xl font-bold text-center mb-8 text-indigo-600">Nossos Softwares</h2>
+            <div id="product-list-public" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Produtos serão injetados aqui via JS -->
+            </div>
+        </div>
+
+        <!-- Tela de Login -->
+        <div id="login-page" class="page flex items-center justify-center">
+            <div class="w-full max-w-md bg-white p-8 rounded-lg shadow-xl">
+                <h2 class="text-3xl font-bold text-center mb-6 text-indigo-600">Acesso Restrito</h2>
+                <form id="login-form">
+                    <div class="mb-4">
+                        <label for="username" class="block text-gray-700 font-medium mb-2">Usuário</label>
+                        <input type="text" id="username" name="username" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-300" placeholder="Digite seu usuário">
+                    </div>
+                    <div class="mb-6">
+                        <label for="password" class="block text-gray-700 font-medium mb-2">Senha</label>
+                        <input type="password" id="password" name="password" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-300" placeholder="Digite sua senha">
+                    </div>
+                    <button type="submit" class="w-full bg-indigo-600 text-white py-2 rounded-md font-semibold hover:bg-indigo-700 transition duration-300">Entrar</button>
+                    <div id="login-message" class="mt-4 text-center text-red-500 hidden"></div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Tela de CRUD (Apenas para Admin) -->
+        <div id="admin-crud-page" class="page">
+            <h2 class="text-4xl font-bold text-center mb-8 text-indigo-600">CRUD de Softwares</h2>
+            
+            <div class="bg-white p-6 rounded-lg shadow-xl mb-8">
+                <h3 class="text-2xl font-bold mb-4 text-indigo-600" id="crud-form-title">Adicionar Novo Software</h3>
+                <form id="crud-form">
+                    <input type="hidden" id="product-id">
+                    <div class="mb-4">
+                        <label for="product-name" class="block text-gray-700 font-medium mb-2">Nome do Software</label>
+                        <input type="text" id="product-name" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="product-description" class="block text-gray-700 font-medium mb-2">Descrição</label>
+                        <textarea id="product-description" rows="3" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" required></textarea>
+                    </div>
+                    <div class="mb-4">
+                        <label for="product-price" class="block text-gray-700 font-medium mb-2">Preço (R$)</label>
+                        <input type="number" id="product-price" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" step="0.01" required>
+                    </div>
+                    <button type="submit" id="submit-crud-btn" class="w-full bg-indigo-600 text-white py-2 rounded-md font-semibold hover:bg-indigo-700 transition duration-300">
+                        Adicionar Software
+                    </button>
+                </form>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-xl">
+                <h3 class="text-2xl font-bold mb-4 text-indigo-600">Softwares Cadastrados</h3>
+                <table class="min-w-full bg-white rounded-lg">
+                    <thead>
+                        <tr class="w-full text-left text-gray-600 bg-gray-50">
+                            <th class="px-4 py-3 font-semibold">Nome</th>
+                            <th class="px-4 py-3 font-semibold">Preço</th>
+                            <th class="px-4 py-3 font-semibold text-center">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="crud-table-body">
+                        <!-- Itens serão injetados aqui via JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Painel do Cliente (Após Login) -->
+        <div id="client-dashboard" class="page">
+            <h2 class="text-4xl font-bold text-center mb-8 text-indigo-600">Seus Softwares</h2>
+            <div id="client-products-list" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Produtos comprados serão injetados aqui via JS -->
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white p-6 text-center mt-auto">
+        <p class="text-gray-400">&copy; 2025 Software House. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        // Dados de exemplo para simular um banco de dados
+        let products = [
+            { id: 1, name: "Gestor de Projetos Pro", description: "Uma ferramenta completa para gerenciar suas tarefas e equipes com eficiência.", price: 499.99 },
+            { id: 2, name: "ERP Inteligente", description: "Sistema de planejamento de recursos empresariais com IA integrada.", price: 1299.50 },
+            { id: 3, name: "CRM Personalizado", description: "Gerencie seus clientes de forma eficaz e construa relacionamentos duradouros.", price: 650.00 }
+        ];
+
+        // Variável de controle de UI
+        let currentEditingProductId = null;
+
+        // Elementos do DOM
+        const pages = document.querySelectorAll('.page');
+        const navHome = document.getElementById('nav-home');
+        const navProducts = document.getElementById('nav-products');
+        const navPortfolio = document.getElementById('nav-portfolio');
+        const navLogin = document.getElementById('nav-login');
+        const navLogout = document.getElementById('nav-logout');
+        const ctaProducts = document.getElementById('cta-products');
+        const productListPublic = document.getElementById('product-list-public');
+        const loginForm = document.getElementById('login-form');
+        const loginMessage = document.getElementById('login-message');
+        const crudForm = document.getElementById('crud-form');
+        const crudTableBody = document.getElementById('crud-table-body');
+        const clientProductsList = document.getElementById('client-products-list');
+        const crudFormTitle = document.getElementById('crud-form-title');
+        const submitCrudBtn = document.getElementById('submit-crud-btn');
+        const productNameInput = document.getElementById('product-name');
+        const productDescriptionInput = document.getElementById('product-description');
+        const productPriceInput = document.getElementById('product-price');
+
+        // Função para mudar de página
+        function navigateTo(pageId) {
+            pages.forEach(page => page.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active');
+        }
+
+        // Função para renderizar a lista de produtos na tela pública
+        function renderPublicProducts() {
+            productListPublic.innerHTML = '';
+            products.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300';
+                productCard.innerHTML = `
+                    <h3 class="text-xl font-bold text-indigo-600 mb-2">${product.name}</h3>
+                    <p class="text-gray-600 mb-4">${product.description}</p>
+                    <p class="text-2xl font-bold text-gray-800">R$ ${product.price.toFixed(2).replace('.', ',')}</p>
+                    <button class="mt-4 px-4 py-2 bg-indigo-600 text-white rounded-md font-medium hover:bg-indigo-700 transition duration-300">
+                        Comprar
+                    </button>
+                `;
+                productListPublic.appendChild(productCard);
+            });
+        }
+
+        // Função para renderizar a tabela CRUD
+        function renderCRUDTable() {
+            crudTableBody.innerHTML = '';
+            products.forEach(product => {
+                const row = document.createElement('tr');
+                row.className = 'border-b last:border-b-0 hover:bg-gray-50';
+                row.innerHTML = `
+                    <td class="p-4">${product.name}</td>
+                    <td class="p-4">R$ ${product.price.toFixed(2).replace('.', ',')}</td>
+                    <td class="p-4 text-center space-x-2">
+                        <button class="bg-yellow-500 text-white px-3 py-1 rounded-md text-sm font-medium hover:bg-yellow-600 transition duration-300 edit-btn" data-id="${product.id}">
+                            Editar
+                        </button>
+                        <button class="bg-red-500 text-white px-3 py-1 rounded-md text-sm font-medium hover:bg-red-600 transition duration-300 delete-btn" data-id="${product.id}">
+                            Excluir
+                        </button>
+                    </td>
+                `;
+                crudTableBody.appendChild(row);
+            });
+
+            // Adiciona event listeners para os botões de editar e excluir
+            crudTableBody.querySelectorAll('.edit-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const id = parseInt(e.target.dataset.id);
+                    const productToEdit = products.find(p => p.id === id);
+                    if (productToEdit) {
+                        currentEditingProductId = id;
+                        productNameInput.value = productToEdit.name;
+                        productDescriptionInput.value = productToEdit.description;
+                        productPriceInput.value = productToEdit.price;
+                        crudFormTitle.textContent = 'Editar Software';
+                        submitCrudBtn.textContent = 'Salvar Alterações';
+                    }
+                });
+            });
+
+            crudTableBody.querySelectorAll('.delete-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const id = parseInt(e.target.dataset.id);
+                    products = products.filter(p => p.id !== id);
+                    renderCRUDTable();
+                    renderPublicProducts();
+                });
+            });
+        }
+
+        // Função para renderizar a dashboard do cliente
+        function renderClientDashboard() {
+            clientProductsList.innerHTML = '';
+            // Para este protótipo, vamos simular que o cliente comprou alguns produtos
+            const purchasedProducts = [products[0], products[2]];
+            
+            if (purchasedProducts.length === 0) {
+                clientProductsList.innerHTML = '<p class="text-center text-gray-500">Você ainda não comprou nenhum software.</p>';
+                return;
+            }
+
+            purchasedProducts.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300';
+                productCard.innerHTML = `
+                    <h3 class="text-xl font-bold text-indigo-600 mb-2">${product.name}</h3>
+                    <p class="text-gray-600 mb-4">${product.description}</p>
+                    <a href="#" class="mt-4 inline-block px-4 py-2 bg-green-500 text-white rounded-md font-medium hover:bg-green-600 transition duration-300">
+                        Baixar Software
+                    </a>
+                `;
+                clientProductsList.appendChild(productCard);
+            });
+        }
+
+        // Event Listeners para navegação
+        navHome.addEventListener('click', () => { navigateTo('homepage'); });
+        navProducts.addEventListener('click', () => { navigateTo('products-page'); renderPublicProducts(); });
+        navLogin.addEventListener('click', () => { navigateTo('login-page'); });
+        navPortfolio.addEventListener('click', (e) => { 
+            e.preventDefault(); 
+            navigateTo('homepage');
+            document.getElementById('portfolio-section').scrollIntoView({ behavior: 'smooth' });
+        });
+        ctaProducts.addEventListener('click', (e) => { e.preventDefault(); navigateTo('products-page'); renderPublicProducts(); });
+        navLogout.addEventListener('click', () => {
+            navLogin.classList.remove('hidden');
+            navLogout.classList.add('hidden');
+            navigateTo('homepage');
+        });
+
+        // Event Listener para o formulário de login
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            loginMessage.classList.add('hidden');
+            document.getElementById('username').value = '';
+            document.getElementById('password').value = '';
+
+            if (username === 'admin' && password === 'admin') {
+                navLogin.classList.add('hidden');
+                navLogout.classList.remove('hidden');
+                navigateTo('admin-crud-page');
+                renderCRUDTable();
+            } else if (username === 'cliente' && password === 'cliente') {
+                navLogin.classList.add('hidden');
+                navLogout.classList.remove('hidden');
+                navigateTo('client-dashboard');
+                renderClientDashboard();
+            } else {
+                loginMessage.textContent = 'Usuário ou senha incorretos.';
+                loginMessage.classList.remove('hidden');
+            }
+        });
+
+        // Event Listener para o formulário de CRUD
+        crudForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = productNameInput.value;
+            const description = productDescriptionInput.value;
+            const price = parseFloat(productPriceInput.value);
+
+            if (currentEditingProductId) {
+                // Lógica para editar um produto existente
+                const productIndex = products.findIndex(p => p.id === currentEditingProductId);
+                if (productIndex !== -1) {
+                    products[productIndex] = { ...products[productIndex], name, description, price };
+                }
+                currentEditingProductId = null;
+                crudFormTitle.textContent = 'Adicionar Novo Software';
+                submitCrudBtn.textContent = 'Adicionar Software';
+            } else {
+                // Lógica para adicionar um novo produto
+                const newProduct = {
+                    id: products.length > 0 ? Math.max(...products.map(p => p.id)) + 1 : 1,
+                    name,
+                    description,
+                    price
+                };
+                products.push(newProduct);
+            }
+
+            // Limpa o formulário e re-renderiza as tabelas
+            crudForm.reset();
+            renderCRUDTable();
+            renderPublicProducts();
+        });
+
+    </script>
+</body>
+</html>
