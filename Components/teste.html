@@ -36,9 +36,8 @@
             </a>
             <div class="flex space-x-4">
                 <a href="#" id="nav-products" class="text-gray-600 hover:text-indigo-600 font-medium">Produtos</a>
+                <a href="#" id="nav-services" class="text-gray-600 hover:text-indigo-600 font-medium">Serviços</a>
                 <a href="#" id="nav-portfolio" class="text-gray-600 hover:text-indigo-600 font-medium">Portfólio</a>
-                <a href="#" id="nav-login" class="px-4 py-2 bg-indigo-600 text-white rounded-md font-medium hover:bg-indigo-700 transition duration-300">Login</a>
-                <button id="nav-logout" class="px-4 py-2 bg-red-500 text-white rounded-md font-medium hover:bg-red-600 transition duration-300 hidden">Logout</button>
             </div>
         </nav>
     </header>
@@ -93,81 +92,81 @@
             </div>
         </div>
 
+        <!-- Tela de Serviços -->
+        <div id="services-page" class="page">
+            <h2 class="text-4xl font-bold text-center mb-8 text-indigo-600">Fale Conosco</h2>
+            <div class="grid md:grid-cols-3 gap-8 text-center">
+                <!-- Opção 1: Chat Online -->
+                <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center justify-center">
+                    <span class="text-5xl mb-4">💬</span>
+                    <h3 class="text-xl font-bold text-indigo-600 mb-2">Chat Online</h3>
+                    <p class="text-gray-600">Fale conosco em nosso atendimento online.</p>
+                    <button class="mt-4 px-4 py-2 bg-indigo-600 text-white rounded-md font-medium hover:bg-indigo-700 transition duration-300">
+                        Iniciar Chat
+                    </button>
+                </div>
+                <!-- Opção 2: Mande um E-mail -->
+                <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center justify-center">
+                    <span class="text-5xl mb-4">📧</span>
+                    <h3 class="text-xl font-bold text-indigo-600 mb-2">Mande um E-mail</h3>
+                    <p class="text-gray-600">Preencha o formulário abaixo.</p>
+                    <button id="show-contact-form-btn" class="mt-4 px-4 py-2 bg-indigo-600 text-white rounded-md font-medium hover:bg-indigo-700 transition duration-300">
+                        Preencher Formulário
+                    </button>
+                </div>
+                <!-- Opção 3: Ligue para Nós -->
+                <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center justify-center">
+                    <span class="text-5xl mb-4">📞</span>
+                    <h3 class="text-xl font-bold text-indigo-600 mb-2">Ligue para Nós</h3>
+                    <p class="text-gray-600">Ligue (47) 3512-8833<br>Segunda a Sexta 09:00 às 17:50</p>
+                </div>
+            </div>
+            <!-- Formulário de Contato -->
+            <div id="contact-form-container" class="mt-8 hidden">
+                <div class="w-full max-w-lg mx-auto bg-white p-8 rounded-lg shadow-xl">
+                    <h3 class="text-2xl font-bold text-center mb-6 text-indigo-600">Formulário de Contato</h3>
+                    <form id="contact-form">
+                        <div class="mb-4">
+                            <label for="contact-name" class="block text-gray-700 font-medium mb-2">Nome</label>
+                            <input type="text" id="contact-name" name="contact-name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-300" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="contact-email" class="block text-gray-700 font-medium mb-2">E-mail</label>
+                            <input type="email" id="contact-email" name="contact-email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-300" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="contact-phone" class="block text-gray-700 font-medium mb-2">Telefone</label>
+                            <input type="tel" id="contact-phone" name="contact-phone" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-300">
+                        </div>
+                        <div class="mb-4">
+                            <label for="contact-company" class="block text-gray-700 font-medium mb-2">Empresa</label>
+                            <input type="text" id="contact-company" name="contact-company" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-300">
+                        </div>
+                        <div class="mb-4">
+                            <label for="contact-segment" class="block text-gray-700 font-medium mb-2">Segmento</label>
+                            <select id="contact-segment" name="contact-segment" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-300">
+                                <option value="" disabled selected>Selecione uma opção</option>
+                                <option value="ecomerce">E-commerce</option>
+                                <option value="websites">Websites</option>
+                                <option value="sistemas-sob-demanda">Sistemas Sob Demanda</option>
+                            </select>
+                        </div>
+                        <div class="mb-4">
+                            <label for="contact-message" class="block text-gray-700 font-medium mb-2">Mensagem</label>
+                            <textarea id="contact-message" name="contact-message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-300" required></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-indigo-600 text-white py-2 rounded-md font-semibold hover:bg-indigo-700 transition duration-300">Enviar</button>
+                        <div id="form-message" class="mt-4 text-center text-green-500 hidden"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
         <!-- Tela de Produtos -->
         <div id="products-page" class="page">
             <h2 class="text-4xl font-bold text-center mb-8 text-indigo-600">Nossos Softwares</h2>
             <div id="product-list-public" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Produtos serão injetados aqui via JS -->
-            </div>
-        </div>
-
-        <!-- Tela de Login -->
-        <div id="login-page" class="page flex items-center justify-center">
-            <div class="w-full max-w-md bg-white p-8 rounded-lg shadow-xl">
-                <h2 class="text-3xl font-bold text-center mb-6 text-indigo-600">Acesso Restrito</h2>
-                <form id="login-form">
-                    <div class="mb-4">
-                        <label for="username" class="block text-gray-700 font-medium mb-2">Usuário</label>
-                        <input type="text" id="username" name="username" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-300" placeholder="Digite seu usuário">
-                    </div>
-                    <div class="mb-6">
-                        <label for="password" class="block text-gray-700 font-medium mb-2">Senha</label>
-                        <input type="password" id="password" name="password" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-300" placeholder="Digite sua senha">
-                    </div>
-                    <button type="submit" class="w-full bg-indigo-600 text-white py-2 rounded-md font-semibold hover:bg-indigo-700 transition duration-300">Entrar</button>
-                    <div id="login-message" class="mt-4 text-center text-red-500 hidden"></div>
-                </form>
-            </div>
-        </div>
-
-        <!-- Tela de CRUD (Apenas para Admin) -->
-        <div id="admin-crud-page" class="page">
-            <h2 class="text-4xl font-bold text-center mb-8 text-indigo-600">CRUD de Softwares</h2>
-            
-            <div class="bg-white p-6 rounded-lg shadow-xl mb-8">
-                <h3 class="text-2xl font-bold mb-4 text-indigo-600" id="crud-form-title">Adicionar Novo Software</h3>
-                <form id="crud-form">
-                    <input type="hidden" id="product-id">
-                    <div class="mb-4">
-                        <label for="product-name" class="block text-gray-700 font-medium mb-2">Nome do Software</label>
-                        <input type="text" id="product-name" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
-                    </div>
-                    <div class="mb-4">
-                        <label for="product-description" class="block text-gray-700 font-medium mb-2">Descrição</label>
-                        <textarea id="product-description" rows="3" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" required></textarea>
-                    </div>
-                    <div class="mb-4">
-                        <label for="product-price" class="block text-gray-700 font-medium mb-2">Preço (R$)</label>
-                        <input type="number" id="product-price" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" step="0.01" required>
-                    </div>
-                    <button type="submit" id="submit-crud-btn" class="w-full bg-indigo-600 text-white py-2 rounded-md font-semibold hover:bg-indigo-700 transition duration-300">
-                        Adicionar Software
-                    </button>
-                </form>
-            </div>
-
-            <div class="bg-white p-6 rounded-lg shadow-xl">
-                <h3 class="text-2xl font-bold mb-4 text-indigo-600">Softwares Cadastrados</h3>
-                <table class="min-w-full bg-white rounded-lg">
-                    <thead>
-                        <tr class="w-full text-left text-gray-600 bg-gray-50">
-                            <th class="px-4 py-3 font-semibold">Nome</th>
-                            <th class="px-4 py-3 font-semibold">Preço</th>
-                            <th class="px-4 py-3 font-semibold text-center">Ações</th>
-                        </tr>
-                    </thead>
-                    <tbody id="crud-table-body">
-                        <!-- Itens serão injetados aqui via JS -->
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <!-- Painel do Cliente (Após Login) -->
-        <div id="client-dashboard" class="page">
-            <h2 class="text-4xl font-bold text-center mb-8 text-indigo-600">Seus Softwares</h2>
-            <div id="client-products-list" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Produtos comprados serão injetados aqui via JS -->
             </div>
         </div>
     </main>
@@ -191,21 +190,15 @@
         const pages = document.querySelectorAll('.page');
         const navHome = document.getElementById('nav-home');
         const navProducts = document.getElementById('nav-products');
+        const navServices = document.getElementById('nav-services');
         const navPortfolio = document.getElementById('nav-portfolio');
-        const navLogin = document.getElementById('nav-login');
-        const navLogout = document.getElementById('nav-logout');
         const ctaProducts = document.getElementById('cta-products');
         const productListPublic = document.getElementById('product-list-public');
-        const loginForm = document.getElementById('login-form');
-        const loginMessage = document.getElementById('login-message');
-        const crudForm = document.getElementById('crud-form');
-        const crudTableBody = document.getElementById('crud-table-body');
-        const clientProductsList = document.getElementById('client-products-list');
-        const crudFormTitle = document.getElementById('crud-form-title');
-        const submitCrudBtn = document.getElementById('submit-crud-btn');
-        const productNameInput = document.getElementById('product-name');
-        const productDescriptionInput = document.getElementById('product-description');
-        const productPriceInput = document.getElementById('product-price');
+        const showContactFormBtn = document.getElementById('show-contact-form-btn');
+        const contactFormContainer = document.getElementById('contact-form-container');
+        const contactForm = document.getElementById('contact-form');
+        const formMessage = document.getElementById('form-message');
+
 
         // Função para mudar de página
         function navigateTo(pageId) {
@@ -231,151 +224,41 @@
             });
         }
 
-        // Função para renderizar a tabela CRUD
-        function renderCRUDTable() {
-            crudTableBody.innerHTML = '';
-            products.forEach(product => {
-                const row = document.createElement('tr');
-                row.className = 'border-b last:border-b-0 hover:bg-gray-50';
-                row.innerHTML = `
-                    <td class="p-4">${product.name}</td>
-                    <td class="p-4">R$ ${product.price.toFixed(2).replace('.', ',')}</td>
-                    <td class="p-4 text-center space-x-2">
-                        <button class="bg-yellow-500 text-white px-3 py-1 rounded-md text-sm font-medium hover:bg-yellow-600 transition duration-300 edit-btn" data-id="${product.id}">
-                            Editar
-                        </button>
-                        <button class="bg-red-500 text-white px-3 py-1 rounded-md text-sm font-medium hover:bg-red-600 transition duration-300 delete-btn" data-id="${product.id}">
-                            Excluir
-                        </button>
-                    </td>
-                `;
-                crudTableBody.appendChild(row);
-            });
-
-            // Adiciona event listeners para os botões de editar e excluir
-            crudTableBody.querySelectorAll('.edit-btn').forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    const id = parseInt(e.target.dataset.id);
-                    const productToEdit = products.find(p => p.id === id);
-                    if (productToEdit) {
-                        currentEditingProductId = id;
-                        productNameInput.value = productToEdit.name;
-                        productDescriptionInput.value = productToEdit.description;
-                        productPriceInput.value = productToEdit.price;
-                        crudFormTitle.textContent = 'Editar Software';
-                        submitCrudBtn.textContent = 'Salvar Alterações';
-                    }
-                });
-            });
-
-            crudTableBody.querySelectorAll('.delete-btn').forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    const id = parseInt(e.target.dataset.id);
-                    products = products.filter(p => p.id !== id);
-                    renderCRUDTable();
-                    renderPublicProducts();
-                });
-            });
-        }
-
-        // Função para renderizar a dashboard do cliente
-        function renderClientDashboard() {
-            clientProductsList.innerHTML = '';
-            // Para este protótipo, vamos simular que o cliente comprou alguns produtos
-            const purchasedProducts = [products[0], products[2]];
-            
-            if (purchasedProducts.length === 0) {
-                clientProductsList.innerHTML = '<p class="text-center text-gray-500">Você ainda não comprou nenhum software.</p>';
-                return;
-            }
-
-            purchasedProducts.forEach(product => {
-                const productCard = document.createElement('div');
-                productCard.className = 'bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300';
-                productCard.innerHTML = `
-                    <h3 class="text-xl font-bold text-indigo-600 mb-2">${product.name}</h3>
-                    <p class="text-gray-600 mb-4">${product.description}</p>
-                    <a href="#" class="mt-4 inline-block px-4 py-2 bg-green-500 text-white rounded-md font-medium hover:bg-green-600 transition duration-300">
-                        Baixar Software
-                    </a>
-                `;
-                clientProductsList.appendChild(productCard);
-            });
-        }
-
         // Event Listeners para navegação
         navHome.addEventListener('click', () => { navigateTo('homepage'); });
         navProducts.addEventListener('click', () => { navigateTo('products-page'); renderPublicProducts(); });
-        navLogin.addEventListener('click', () => { navigateTo('login-page'); });
+        navServices.addEventListener('click', () => { navigateTo('services-page'); });
         navPortfolio.addEventListener('click', (e) => { 
             e.preventDefault(); 
             navigateTo('homepage');
             document.getElementById('portfolio-section').scrollIntoView({ behavior: 'smooth' });
         });
         ctaProducts.addEventListener('click', (e) => { e.preventDefault(); navigateTo('products-page'); renderPublicProducts(); });
-        navLogout.addEventListener('click', () => {
-            navLogin.classList.remove('hidden');
-            navLogout.classList.add('hidden');
-            navigateTo('homepage');
+        
+        // Lógica para a tela de Serviços
+        showContactFormBtn.addEventListener('click', () => {
+            contactFormContainer.classList.remove('hidden');
+            contactFormContainer.scrollIntoView({ behavior: 'smooth' });
         });
 
-        // Event Listener para o formulário de login
-        loginForm.addEventListener('submit', (e) => {
+        contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
+            // Simulação de envio do formulário
+            console.log('Formulário de contato enviado:', {
+                name: document.getElementById('contact-name').value,
+                email: document.getElementById('contact-email').value,
+                phone: document.getElementById('contact-phone').value,
+                company: document.getElementById('contact-company').value,
+                segment: document.getElementById('contact-segment').value,
+                message: document.getElementById('contact-message').value,
+            });
 
-            loginMessage.classList.add('hidden');
-            document.getElementById('username').value = '';
-            document.getElementById('password').value = '';
+            // Exibir mensagem de sucesso
+            formMessage.textContent = 'Sua mensagem foi enviada com sucesso! Em breve entraremos em contato.';
+            formMessage.classList.remove('hidden');
 
-            if (username === 'admin' && password === 'admin') {
-                navLogin.classList.add('hidden');
-                navLogout.classList.remove('hidden');
-                navigateTo('admin-crud-page');
-                renderCRUDTable();
-            } else if (username === 'cliente' && password === 'cliente') {
-                navLogin.classList.add('hidden');
-                navLogout.classList.remove('hidden');
-                navigateTo('client-dashboard');
-                renderClientDashboard();
-            } else {
-                loginMessage.textContent = 'Usuário ou senha incorretos.';
-                loginMessage.classList.remove('hidden');
-            }
-        });
-
-        // Event Listener para o formulário de CRUD
-        crudForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const name = productNameInput.value;
-            const description = productDescriptionInput.value;
-            const price = parseFloat(productPriceInput.value);
-
-            if (currentEditingProductId) {
-                // Lógica para editar um produto existente
-                const productIndex = products.findIndex(p => p.id === currentEditingProductId);
-                if (productIndex !== -1) {
-                    products[productIndex] = { ...products[productIndex], name, description, price };
-                }
-                currentEditingProductId = null;
-                crudFormTitle.textContent = 'Adicionar Novo Software';
-                submitCrudBtn.textContent = 'Adicionar Software';
-            } else {
-                // Lógica para adicionar um novo produto
-                const newProduct = {
-                    id: products.length > 0 ? Math.max(...products.map(p => p.id)) + 1 : 1,
-                    name,
-                    description,
-                    price
-                };
-                products.push(newProduct);
-            }
-
-            // Limpa o formulário e re-renderiza as tabelas
-            crudForm.reset();
-            renderCRUDTable();
-            renderPublicProducts();
+            // Limpar o formulário
+            contactForm.reset();
         });
 
     </script>
