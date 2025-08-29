@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Registro</title>
+</head>
+<body>
+    
+    <section class="register-form-body">
+            <form id="registerForm">
+                <span class="title">Registre-se</span>
+                <div class="register-fields">
+                    <input type="text" id="nome" name="nome"  placeholder="Nome">
+                    <input type="text" id="cpf" name="cpf" placeholder="CPF">
+                    <input type="text" id="email" name="email"  placeholder="E-mail">
+                    <input type="text" id="telefone" name="telefone"  placeholder="Telefone">
+                    <input type="text" id="login" name="login"  placeholder="Usuário para login">
+                    <input type="password" id="senha" name="senha" placeholder="Senha">
+                    <input type="password" id="confirmarSenha" name="confirmarSenha" placeholder="Confirmar Senha">
+                </div>
+                <div class="form-btns">
+                    <button type="button" onclick="validarCadastro()">Cadastrar</button>
+                    <button type="button" onclick="Voltar()">Voltar</button>
+                </div>
+            </form>
+    </section>
+    <script src="cadastro.js"></script>
+</body>
+</html>

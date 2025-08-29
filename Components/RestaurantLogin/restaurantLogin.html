@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="restauranteLogin.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>Entar</title>
+</head>
+<body>
+    
+    <section class="login-form-body">
+            <form id="loginForm">
+                <span class="title">Entrar</span>
+                <div class="login-fields">
+                    <input type="text" id="usuario" name="usuario"  placeholder="Usuário" required>
+                    <input type="password" id="senha" name="senha" placeholder="Senha" required>
+                </div>
+                <div class="form-btns">
+                    <button id="botaoentrar" type="button" onclick="validarLogin()">Entrar</button>
+                    <button id="botaocadastrar" type="button" onclick="cadastrar()">Cadastre-se</button>
+                </div>
+            </form>
+    </section>
+    <script src="restaurante.js"></script>
+</body>
+</html>

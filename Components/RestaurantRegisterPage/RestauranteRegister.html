@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="RestauranteRegistro.css">
+    <title>Registro</title>
+</head>
+<body>
+    
+    <section class="register-form-body">
+            <form id="registerForm">
+                <span class="title">Registre-se</span>
+                <div class="register-fields">
+                    <input type="text" id="restaurantName" name="restaurantName"  placeholder="Razão Social">
+                    <input type="text" id="ownerName" name="ownerName"  placeholder="Nome Fantasia">
+                    <input type="text" id="email" name="email" placeholder="E-mail">
+                    <input type="text" id="cnpj" name="cnpj"  placeholder="CNPJ">
+                    <input type="text" id="phone" name="phone"  placeholder="Telefone">
+                    <select id="instituicao" name="instituicao" class="input-style">
+                        <option value="">Instituição:</option>
+                    </select>
+                    <input type="text" id="username" name="username"  placeholder="Usuário">
+                    <input type="password" id="password" name="password" placeholder="Senha">
+                    <input type="password" id="confirmarSenha" name="confirmarSenha" placeholder="Confirmar Senha">
+                </div>
+                <div class="form-btns">
+                    <button type="button" onclick="validateRegistration()">Cadastrar</button>
+                    <button type="button" onclick="goBack()">Voltar</button>
+                </div>
+            </form>
+    </section>
+    <script src="registro.js"></script>
+</body>
+</html>

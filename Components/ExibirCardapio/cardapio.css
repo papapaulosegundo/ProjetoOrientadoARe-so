@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap');
+
+*{
+    font-family: "Dosis", sans-serif;
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    outline: none; border: none;
+    text-decoration: none;
+    transition:  all 0.4s cubic-bezier(.43,1.1,.62,1.08);
+    --dark-bg:rgb(0,0,0,.7);
+    --light-bg:#f5f5f5;
+}
+
+* > img{
+    user-select: none;
+    pointer-events: none;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+}
+
+html::-webkit-scrollbar{
+    width: 1rem;
+}
+
+html::-webkit-scrollbar-track{
+    background-color: black;
+}
+
+html::-webkit-scrollbar-thumb{
+    background-color: red;
+}
+
+section{
+    padding: 5rem 10%;
+}
+
+body {
+    background-color: #fbfcff;
+}
+
+
+.heading{
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.heading span{
+    font-size: 2.5rem;
+    color:red;
+}
+
+.heading h3{
+    font-size: 4.5rem;
+}
+
+
+
+/* navbar starts */
+.header{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    position: sticky;
+    top:0; left:0; right: 0;
+    z-index: 1000;
+    background-color: white;
+}
+
+
+
+.header .logo{
+    color: black;
+    font-size: 2.5rem;
+    font-weight: bolder;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.header .logo img{
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    margin-right: 30px;
+}
+
+
+
+
+.header .navbar a{
+    font-size: 2rem;
+    margin-left: 2rem;
+    color: black;
+}
+
+.header .navbar a:hover{
+    color: red;
+}
+
+#menu-btn{
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: black;
+    display: none;
+}
+/* navbar ends */
+
+
+/* cardápio */
+.menu .menu-item {
+    width: 35rem;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.menu-card {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction:row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+
+.menu .menu-item .image span {
+    position: absolute;
+    bottom: -10rem; 
+    left: 50%;
+    transform: translateX(-50%);
+    padding: .5rem 1.5rem;
+    font-size: 2rem;
+    color: white;
+    background: black;
+    z-index: 10;
+}
+
+.menu .menu-item .content {
+    padding: 2rem;
+    background: #FFF;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.menu .menu-item .content .restaurant-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.menu .menu-item .content p {
+    text-align: justify;
+}
+
+
+.menu .menu-item .content .item-category {
+    font-size: 2rem;
+    color: black;
+    text-decoration: none;
+}
+
+.menu .menu-item .content p {
+    padding: 1rem 0;
+    line-height: 2;
+    font-size: 1.6rem;
+    color: black;
+}
+
+
+.menu .menu-item .content .restaurant-info .restaurant-name {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.menu .menu-item .content .item-category {
+    display: flex;
+    justify-content: center;
+}
+
+.menu .menu-item .content .item-description {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.erro-msg{
+    font-size: 2.5rem;
+}
+
+.restaurant-name {
+    background-color: red;
+    border-radius: 15px;
+    font-weight: bold;
+}
+
+
+.content{
+    transition: transform 0.3s ease;
+}
+
+.content:hover {
+    transform: scale(1.05);
+}
+
+
+
+/* tooltip starts */
+[data-tooltip] {
+    position: relative;
+    cursor: pointer;
+}
+
+[data-tooltip]::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 5px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    font-size: 0.875em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    margin-top: 5px; 
+    z-index: 10;
+}
+
+[data-tooltip]:hover::before {
+    opacity: 1;
+}
+/* tooltip ends */
+
+
+
+/* media queries */
+@media (max-width:1200px){
+
+    section{
+        padding: 3rem 5%;
+    }
+
+}
+
+@media (max-width:991px){
+
+    section{
+        padding: 3rem 2rem;
+    }
+
+    html{
+        font-size: 55%;
+    }
+
+    .home .slide .content h3{
+        font-size: 15vw;
+    }
+}
+
+
+@media (max-width:768px){
+
+    #menu-btn{
+        display: inline-block;
+    }
+
+    .fa-times{
+        transform: rotate(180deg);
+    }
+       
+    .header .navbar{
+        position: absolute;
+        top: 99%; left:0;right: 0;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+    
+    .header .navbar a{
+        display: block;
+        margin: 2rem;
+        color: white;
+    }
+    .header .navbar.active{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+    }
+
+}
+
+@media (max-width:450px){
+
+    html{
+        font-size: 50%;
+    }
+
+}
